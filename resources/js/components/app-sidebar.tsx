@@ -13,6 +13,16 @@ const mainNavItems: NavItem[] = [
         href: '/dashboard',
         icon: LayoutGrid,
     },
+    {
+        title: 'Funcionarios',
+        href: '/funcionarios',
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Crear Funcionario',
+        href: '/funcionarios/create',
+        icon: LayoutGrid,
+    },
 ];
 
 const footerNavItems: NavItem[] = [

@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\FuncionarioImportController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\PersonaController;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
@@ -16,9 +17,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 
-Route::get('/personas', [PersonaController::class, 'index'])
+Route::get('/funcionarios/create', [FuncionarioController::class, 'create'])->name('funcionarios.create');
+
+Route::get('/funcionarios', [FuncionarioController::class, 'index'])
     ->middleware('auth')
-    ->name('personas.index');
+    ->name('funcionarios.index');
+
+Route::post('/funcionarios/import', [FuncionarioImportController::class, 'store'])
+    ->name('funcionarios.import');
+
+
+Route::post('/funcionarios', [FuncionarioController::class, 'store'])->name('funcionarios.store');
 
 
 require __DIR__.'/settings.php';

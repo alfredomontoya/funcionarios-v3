@@ -9,6 +9,8 @@ class Bitacora extends Model
 {
     use HasFactory;
 
+    // protected $table = 'bitacora';
+
     protected $fillable = ['user_id', 'busqueda', 'hostname'];
 
     public function user()

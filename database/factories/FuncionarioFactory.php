@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Persona>
  */
-class PersonaFactory extends Factory
+class FuncionarioFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,12 +17,13 @@ class PersonaFactory extends Factory
     public function definition(): array
     {
         return [
-            'ci' => $this->faker->unique()->numerify('########'),
+            'ci' => $this->faker->unique()->numerify('########'), // 8 dígitos
             'nombres' => $this->faker->firstName(),
             'apellidos' => $this->faker->lastName(),
             'cargo' => $this->faker->jobTitle(),
-            'encargado' => $this->faker->name(),
-            'telefonoencargado' => $this->faker->phoneNumber(),
+            'edificio' => $this->faker->randomElement(['Central', 'Quinta Municipal', 'Sempla']),
+            'responsable' => $this->faker->name(),
+            'telresponsable' => $this->faker->phoneNumber(),
         ];
     }
 }
