@@ -34,7 +34,7 @@ export default function InsertForm({ onInsertSuccess }: InsertFormProps) {
         }
       });
       alert(res.data.message);
-      onInsertSuccess(res.data.funcionarios); // actualiza tabla
+      // onInsertSuccess(res.data.funcionarios); // actualiza tabla
       setForm({ ci: "", nombres: "", apellidos: "", cargo: "", edificio: "", responsable: "", telresponsable: "" });
     } catch (error: any) {
       console.error(error.response?.data || error.message);

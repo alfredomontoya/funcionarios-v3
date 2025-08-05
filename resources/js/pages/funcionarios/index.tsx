@@ -45,9 +45,9 @@ export default function FuncionariosIndex({ funcionarios, filters }: Props) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
 
-            <div className="m-6 p-6 min-h-[calc(100vh-65px)] flex flex-col items-center rounded-sm" style={{ background: 'rgb(178, 198, 184)'}}>
+            <div className="p-6 min-h-[calc(100vh-65px)] flex flex-col items-center" style={{ background: 'rgb(178, 198, 184)'}}>
                 {/* <Head title="Listado de Funcionarios" /> */}
-                <AppSidebarHeader breadcrumbs={breadcrumbs} />
+                {/* <AppSidebarHeader breadcrumbs={breadcrumbs} /> */}
 
                 {/* Formulario de importación */}
                 {/* <ImportForm onImportSuccess={(nuevosDatos) => setFuncionarios(nuevosDatos)} /> */}

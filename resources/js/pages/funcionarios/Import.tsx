@@ -24,6 +24,7 @@ export default function ImportForm({ onImportSuccess }: ImportFormProps) {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
+      console.log(res.data.message)
       alert(res.data.message);
       onImportSuccess(res.data.funcionarios); // Actualiza la tabla
     } catch (error) {

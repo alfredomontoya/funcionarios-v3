@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->integer('nro')->nullable();
             $table->integer('nroedificio')->nullable();
-            $table->string('ci')->unique();
+            $table->string('ci');
             $table->string('nombres');
             $table->string('apellidos');
-            $table->string('cargo');
-            $table->string('edificio');
+            $table->string('cargo')->nullable();
+            $table->string('edificio')->nullable();
             $table->string('responsable')->nullable();
             $table->string('telresponsable')->nullable();
             $table->timestamps();
