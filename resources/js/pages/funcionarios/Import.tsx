@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import AppLayout from "@/layouts/app-layout";
+import { BreadcrumbItem } from "@/types";
 
 interface ImportFormProps {
   onImportSuccess: (funcionarios: any[]) => void;
@@ -31,21 +33,30 @@ export default function ImportForm({ onImportSuccess }: ImportFormProps) {
     }
   };
 
+  const breadcrumbs: BreadcrumbItem[] = [
+      {
+          title: 'Funcionarios',
+          href: '/funcionarios/import',
+      },
+  ];
+
   return (
-    <form onSubmit={handleSubmit} className="p-4 border rounded mb-4">
-      <input
-        type="file"
-        accept=".xlsx,.xls,.csv"
-        onChange={(e) => setFile(e.target.files?.[0] || null)}
-        className="mb-2 block"
-      />
-      <button
-        type="submit"
-        className="bg-green-500 text-white px-4 py-2 rounded disabled:opacity-50"
-        disabled={loading}
-      >
-        {loading ? "Importando..." : "Importar Excel"}
-      </button>
-    </form>
+    <AppLayout breadcrumbs={breadcrumbs}>
+        <form onSubmit={handleSubmit} className="p-4 border rounded mb-4">
+        <input
+            type="file"
+            accept=".xlsx,.xls,.csv"
+            onChange={(e) => setFile(e.target.files?.[0] || null)}
+            className="mb-2 block"
+        />
+        <button
+            type="submit"
+            className="bg-green-500 text-white px-4 py-2 rounded disabled:opacity-50"
+            disabled={loading}
+        >
+            {loading ? "Importando..." : "Importar Excel"}
+        </button>
+        </form>
+    </AppLayout>
   );
 }

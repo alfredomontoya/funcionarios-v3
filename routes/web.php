@@ -23,8 +23,10 @@ Route::get('/funcionarios', [FuncionarioController::class, 'index'])
     ->middleware('auth')
     ->name('funcionarios.index');
 
-Route::post('/funcionarios/import', [FuncionarioImportController::class, 'store'])
+Route::get('/funcionarios/import', [FuncionarioImportController::class, 'index'])
     ->name('funcionarios.import');
+Route::post('/funcionarios/import', [FuncionarioImportController::class, 'store'])
+    ->name('funcionarios.import.store');
 
 
 Route::post('/funcionarios', [FuncionarioController::class, 'store'])->name('funcionarios.store');

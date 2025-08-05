@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 use App\Imports\FuncionarioImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Funcionario;
+use Inertia\Inertia;
 
 class FuncionarioImportController extends Controller
 {
+    public function index(Request $request)
+    {
+        return Inertia::render('funcionarios/Import');
+    }
+
     public function store(Request $request)
     {
         $request->validate([

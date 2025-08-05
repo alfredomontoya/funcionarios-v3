@@ -22,14 +22,16 @@ class FuncionarioController extends Controller
             ]);
         }
 
+
         $funcionarios = Funcionario::query()
             ->when($search, function ($query, $search) {
                 $query->where('ci', 'like', "%{$search}%")
                     ->orWhere('nombres', 'like', "%{$search}%")
-                    ->orWhere('apellidos', 'like', "%{$search}%")
-                    ->orWhere('cargo', 'like', "%{$search}%");
+                    ->orWhere('apellidos', 'like', "%{$search}%");
             })
             ->get();
+
+        // dd($funcionarios);
 
         return Inertia::render('funcionarios/index', [
             'funcionarios' => $funcionarios,
@@ -51,14 +53,13 @@ class FuncionarioController extends Controller
             'apellidos'        => 'required|string|max:100',
             'cargo'            => 'required|string|max:100',
             'edificio'         => 'nullable|string|max:100',
-            'reponsable'        => 'nullable|string|max:100',
+            'responsable'        => 'nullable|string|max:100',
             'telresponsable'=> 'nullable|string|max:20',
         ]);
 
 
         $funcionario = Funcionario::create($validated);
 
-        // dd($funcionario);
 
         // Devolvemos lista actualizada
         $funcionarios = Funcionario::latest()->get();

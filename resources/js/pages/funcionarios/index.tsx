@@ -31,9 +31,9 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function FuncionariosIndex({ funcionarios: initialData, filters }: Props) {
+export default function FuncionariosIndex({ funcionarios, filters }: Props) {
     const [search, setSearch] = useState(filters.search || '');
-    const [funcionarios, setFuncionarios] = useState(initialData);
+    // const [funcionarios, setFuncionarios] = useState(initialData);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault(); // evita recargar
@@ -44,13 +44,13 @@ export default function FuncionariosIndex({ funcionarios: initialData, filters }
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            
+
             <div className="m-6 p-6 min-h-[calc(100vh-65px)] flex flex-col items-center rounded-sm" style={{ background: 'rgb(178, 198, 184)'}}>
                 {/* <Head title="Listado de Funcionarios" /> */}
                 <AppSidebarHeader breadcrumbs={breadcrumbs} />
 
                 {/* Formulario de importación */}
-                <ImportForm onImportSuccess={(nuevosDatos) => setFuncionarios(nuevosDatos)} />
+                {/* <ImportForm onImportSuccess={(nuevosDatos) => setFuncionarios(nuevosDatos)} /> */}
 
                 <SearchForm
                     search={search}

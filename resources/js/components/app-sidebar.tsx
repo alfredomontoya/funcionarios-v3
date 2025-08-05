@@ -23,6 +23,11 @@ const mainNavItems: NavItem[] = [
         href: '/funcionarios/create',
         icon: LayoutGrid,
     },
+    {
+        title: 'Importar Funcionario',
+        href: '/funcionarios/import',
+        icon: LayoutGrid,
+    },
 ];
 
 const footerNavItems: NavItem[] = [

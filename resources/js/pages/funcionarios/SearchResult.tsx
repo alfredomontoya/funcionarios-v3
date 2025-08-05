@@ -32,9 +32,9 @@ export default function SearchResult({ funcionarios }: SearchResultProps) {
                             <td className="px-4 py-2">{p.ci}</td>
                             <td className="px-4 py-2">{p.nombres}</td>
                             <td className="px-4 py-2">{p.apellidos}</td>
-                            <td className="px-4 py-2">{p.cargo}</td>
-                            <td className="px-4 py-2">{p.responsable}</td>
-                            <td className="px-4 py-2">{p.telresponsable}</td>
+                            <td className="px-4 py-2">{p.cargo??'nd'}</td>
+                            <td className="px-4 py-2">{p.responsable??'nd'}</td>
+                            <td className="px-4 py-2">{p.telresponsable??'nd'}</td>
                         </tr>
                     ))
                 ) : (

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Search, X } from 'lucide-react';
-import { Input } from '@/components/ui/input';
 
 interface SearchFormProps {
     search: string;
@@ -52,7 +51,7 @@ export default function SearchForm({ search, setSearch, onSubmit }: SearchFormPr
                 {/* Icono de búsqueda al inicio */}
                 <Search className="text-gray-400 w-5 h-5 mr-2" />
 
-                
+
                 {/* Input */}
                 <input
                     type="text"
