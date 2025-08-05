@@ -28,10 +28,10 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 'amontoya',
         ]);
 
-        Funcionario::factory(10)->create();
+        // Funcionario::factory(10)->create();
 
         $this->call(UserSeeder::class);
     }
