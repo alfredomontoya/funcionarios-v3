@@ -54,7 +54,7 @@ export default function InsertForm({ onInsertSuccess }: InsertFormProps) {
 
   return (
     <AppLayout breadcrumbs={breadcrumbs}>
-      <form onSubmit={handleSubmit} className="p-4 bg-white rounded shadow mb-4">
+      <form onSubmit={handleSubmit} className="p-4 rounded shadow mb-4">
         <div className="grid grid-cols-2 gap-4">
           <input name="ci" value={form.ci} onChange={handleChange} placeholder="CI" className="border p-2 rounded" required />
           <input name="nombres" value={form.nombres} onChange={handleChange} placeholder="Nombres" className="border p-2 rounded" required />

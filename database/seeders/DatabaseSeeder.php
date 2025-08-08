@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Funcionario;
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,24 +14,21 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->truncateTables([
-            'users',
+            'user',
             // 'gestion',
             // 'funcionario',
             // 'edificio',
-            // 'bitacora'
-            'funcionarios',
-            'bitacoras'
-        ]);
-        User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'amontoya',
+            'gestion',
+            'funcionario',
+            'bitacora'
         ]);
 
         // Funcionario::factory(10)->create();
 
         $this->call(UserSeeder::class);
+        $this->call(GestionSeeder::class);
+        // $this->call(FuncionarioSeeder::class);
+        // $this->call(BitacoraSeeder::class);
     }
 
     protected function truncateTables(array $tables)

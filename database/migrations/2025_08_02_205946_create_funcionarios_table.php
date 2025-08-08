@@ -11,18 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('funcionarios', function (Blueprint $table) {
+        Schema::create('funcionario', function (Blueprint $table) {
             $table->id();
             $table->integer('nro')->nullable();
             $table->integer('nroedificio')->nullable();
             $table->string('ci');
-            $table->string('nombres');
-            $table->string('apellidos');
+            $table->string('nombres')->nullable();
+            $table->string('apellidos')->nullable();
             $table->string('cargo')->nullable();
             $table->string('edificio')->nullable();
             $table->string('responsable')->nullable();
             $table->string('telresponsable')->nullable();
+            $table->tinyInteger('estado')->default(1);
+            $table->tinyInteger('entregado')->default(0);
             $table->timestamps();
+            $table->bigInteger('gestion_id')->unsigned()->default(1);
+            $table->foreign('gestion_id')->references('id')->on('gestion')->onDelete('cascade');
         });
     }
 
@@ -31,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('funcionarios');
+        Schema::dropIfExists('funcionario');
     }
 };

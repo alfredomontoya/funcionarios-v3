@@ -14,9 +14,9 @@ interface SearchResultProps {
 
 export default function SearchResult({ funcionarios }: SearchResultProps) {
     return (
-        <table className="bg-gray-100 table-auto w-full ">
+        <table className="table-auto w-full ">
             <thead className="border-b-2 border-gray-700">
-                <tr className="bg-gray-100">
+                <tr>
                     <th className="px-4 py-2">CI</th>
                     <th className="px-4 py-2">Nombres</th>
                     <th className="px-4 py-2">Apellidos</th>
@@ -28,7 +28,7 @@ export default function SearchResult({ funcionarios }: SearchResultProps) {
             <tbody className="divide-y divide-gray-300">
                 {funcionarios.length > 0 ? (
                     funcionarios.map((p) => (
-                        <tr key={p.id} className="hover:bg-green-100">
+                        <tr key={p.id} className="hover:bg-green-100 dark:hover:bg-black">
                             <td className="px-4 py-2">{p.ci}</td>
                             <td className="px-4 py-2">{p.nombres}</td>
                             <td className="px-4 py-2">{p.apellidos}</td>

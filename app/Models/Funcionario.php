@@ -10,9 +10,13 @@ class Funcionario extends Model
 {
     use HasFactory, Notifiable;
     
-    // protected $table = 'funcionario';
+    protected $table = 'funcionario';
 
-    protected $fillable = ['nro', 'nroedificio', 'ci', 'nombres', 'apellidos', 'cargo', 'edificio', 'responsable', 'telresponsable'];
+    protected $fillable = ['nro', 'nroedificio', 'ci', 'nombres', 'apellidos', 'cargo', 'edificio', 'tipo', 'responsable', 'entregado', 'telresponsable', 'estado', 'gestion_id'];
+
+    public function gestion () {
+        return $this->belongsTo(Gestion::class);
+    }
     
 
 }

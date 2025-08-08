@@ -45,7 +45,7 @@ export default function FuncionariosIndex({ funcionarios, filters }: Props) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
 
-            <div className="p-6 min-h-[calc(100vh-65px)] flex flex-col items-center" style={{ background: 'rgb(178, 198, 184)'}}>
+            <div className="p-6 min-h-[calc(100vh-65px)] flex flex-col items-center" >
                 {/* <Head title="Listado de Funcionarios" /> */}
                 {/* <AppSidebarHeader breadcrumbs={breadcrumbs} /> */}
 

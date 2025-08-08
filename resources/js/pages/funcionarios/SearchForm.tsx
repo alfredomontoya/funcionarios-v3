@@ -44,8 +44,8 @@ export default function SearchForm({ search, setSearch, onSubmit }: SearchFormPr
                     e.preventDefault(); // Evita recargar la página
                     onSubmit(e); // Ejecuta la búsqueda solo aquí
                 }}
-                className={`flex items-center w-full max-w-xl border rounded-full shadow-sm bg-white px-4 py-2 transition-all duration-300 ${
-                    isFocused ? 'ring-2 ring-blue-500' : ''
+                className={`flex items-center w-full max-w-xl border rounded-full shadow-sm  px-4 py-2 transition-all duration-300 ${
+                    isFocused ? 'ring-3 ring-gray-400/50'  : 'ring-1 ring-black/100'
                 }`}
             >
                 {/* Icono de búsqueda al inicio */}
